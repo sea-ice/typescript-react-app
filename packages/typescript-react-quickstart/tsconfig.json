@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*"] // 方便使用import xx from '@src/..'
+    },
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es6",
+    "jsx": "react",
+    "lib": ["DOM", "ES2015"], // 引入相关的库文件
+    "moduleResolution": "node",
+    "pretty": true
+  },
+  "include": [
+    "./src/**/*.tsx",
+    "./src/typings/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

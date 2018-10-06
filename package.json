@@ -1,0 +1,35 @@
+{
+  "name": "typescript-react-app",
+  "version": "0.0.1",
+  "description": "Start your TypeScript React App quickly!",
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "trapp": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sea-ice/typescript-react-app.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "React",
+    "Redux",
+    "webpack",
+    "redux-saga",
+    "Jest",
+    "Mockjs",
+    "boilerplate"
+  ],
+  "author": "Jack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sea-ice/typescript-react-app/issues"
+  },
+  "homepage": "https://github.com/sea-ice/typescript-react-app#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.18.0"
+  }
+}

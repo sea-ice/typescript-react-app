@@ -1,0 +1,41 @@
+{
+  "name": "react-quickstart",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node build/dev-server.js",
+    "lint": "tslint -p ./",
+    "fix": "tslint -p ./ --fix"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "redux-saga": "^0.16.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.8",
+    "@types/react-redux": "^6.0.9",
+    "@types/react-router": "^4.0.31",
+    "@types/redux": "^3.6.0",
+    "@types/redux-logger": "^3.0.6",
+    "@types/redux-saga": "^0.10.5",
+    "awesome-typescript-loader": "^5.2.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "cross-env": "^5.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "mockjs": "^1.0.1-beta3",
+    "redux-logger": "^3.0.6",
+    "source-map-loader": "^0.2.4",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
