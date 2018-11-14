@@ -6,7 +6,7 @@
     "test": "jest"
   },
   "bin": {
-    "trapp": "./bin/index.js"
+    "trapp": "./bin/trapp.js"
   },
   "repository": {
     "type": "git",
