@@ -22,7 +22,7 @@ var copyFiles = [
 ]
 
 commander.version(version)
-  .command('init <app>', 'Initialize app.')
+  .command('init <app>')
   .action((app) => {
     let projectPath = relativeToProjectMain(app)
     // 注意__dirname为当前所执行的js所在目录，也就是最终用户安装全局cli的目录
@@ -38,7 +38,11 @@ commander.version(version)
       copyFile(path.resolve(templateMain, file), projectPath)
     }
   })
-commander.parse(process.argv)
+commander.parse(process.argv) 
+// 以trapp init app为例，此处的process.argv包含[ 'E:\\Program Files\\nodejs\\node.exe', 
+// 'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\typescript-react-app\\bin\\index.js', 
+// 'init', 
+// 'app' ]
 
 function resolve (filepath) {
   return path.resolve(__dirname, filepath)
