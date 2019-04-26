@@ -1,10 +1,7 @@
 #!/usr/bin/env node
-let commander = require('commander')
 let path = require('path')
 let fs = require('fs')
-let readline = require('readline')
 let chalk = require('chalk')
-let version = require('../package.json').version
 let templateMain = resolve('../packages/typescript-react-quickstart')
 let count = 0, totalFile
 
@@ -12,7 +9,6 @@ let count = 0, totalFile
 var copyFiles = [
   'build',
   'src',
-  'test',
   '.editorconfig',
   '.gitignore',
   'package.json',
@@ -21,28 +17,23 @@ var copyFiles = [
   'webpack.config.js'
 ]
 
-commander.version(version)
-  .command('init <app>')
-  .action((app) => {
-    let projectPath = relativeToProjectMain(app)
-    // 注意__dirname为当前所执行的js所在目录，也就是最终用户安装全局cli的目录
-    // process.cwd()才是当前用户所在目录
-    let pathStat = fs.existsSync(projectPath) && fs.statSync(projectPath)
-    if (pathStat && pathStat.isDirectory()) return console.log(
-      chalk.red(`Error: '${app}' directory has exisited!`))
+initApp(process.argv[2])
 
-    fs.mkdirSync(projectPath)
-    // count file
-    totalFile = getTotalFile(templateMain)
-    for (let file of copyFiles) {
-      copyFile(path.resolve(templateMain, file), projectPath)
-    }
-  })
-commander.parse(process.argv) 
-// 以trapp init app为例，此处的process.argv包含[ 'E:\\Program Files\\nodejs\\node.exe', 
-// 'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\typescript-react-app\\bin\\index.js', 
-// 'init', 
-// 'app' ]
+function initApp(appName) {
+  let projectPath = relativeToProjectMain(appName)
+  // 注意__dirname为当前所执行的js所在目录，也就是最终用户安装全局cli的目录
+  // process.cwd()才是当前用户所在目录
+  let pathStat = fs.existsSync(projectPath) && fs.statSync(projectPath)
+  if (pathStat && pathStat.isDirectory()) return console.log(
+    chalk.red(`Error: '${app}' directory has exisited!`))
+
+  fs.mkdirSync(projectPath)
+  // count file
+  totalFile = getTotalFile(templateMain)
+  for (let file of copyFiles) {
+    copyFile(path.resolve(templateMain, file), projectPath)
+  }
+}
 
 function resolve (filepath) {
   return path.resolve(__dirname, filepath)
